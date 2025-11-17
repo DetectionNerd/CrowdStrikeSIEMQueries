@@ -1,2 +1,2 @@
-#Quick References for CrowdStrike Query Language
+**Quick References for CrowdStrike Query Language**
 
