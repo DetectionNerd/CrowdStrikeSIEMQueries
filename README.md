@@ -88,11 +88,4 @@ Each query file includes:
 - **Log Source**
 - **Query Code**  
 
-Example:
-
 ```md
-
-```kusto
-DeviceProcessEvents
-| where FileName == "powershell.exe"
-| where ProcessCommandLine contains "-enc"
