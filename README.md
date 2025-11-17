@@ -3,7 +3,9 @@ A collection of SIEM detection, hunting, and reporting queries for searching thr
 
 This repository is designed mostly for the author to keep a journal of queries/scripts, but may help security analysts, incident responders, and threat hunters accelerate investigations and improve detection coverage.
 
-**Resources referred to, while building this repo:** Cool Query Friday on reddit.com/r/crowdstrike and github.com/crowdstrike
+**Reference:** 
+- Cool Query Friday on reddit.com/r/crowdstrike
+- github.com/crowdstrike
 
 ---
 
