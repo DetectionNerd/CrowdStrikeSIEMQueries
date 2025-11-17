@@ -1,3 +1,3 @@
-**- SampleQueryTitle1
-- SampleQueryTitle2
-- SampleQueryTitle3**
+**- SampleQueryTitle1**
+**- SampleQueryTitle2**
+**- SampleQueryTitle3**
