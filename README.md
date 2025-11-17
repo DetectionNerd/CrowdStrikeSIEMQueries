@@ -1,5 +1,4 @@
-# 🛡️ CrowdStrike SIEM Queries Repository
-
+# 🛡️ CrowdStrike SIEM Queries
 A collection of SIEM detection, hunting, and reporting queries for searching through logs on CrowdStrike NG-SIEM. Includes searching for logs from CrowdStrike Falcon EDR, Duo, Microsoft 365, Umbrella, Mimecast and other commonly integrated log sources. 
 
 This repository is designed to help security analysts, incident responders, and threat hunters accelerate investigations and improve detection coverage.
