@@ -77,7 +77,6 @@ Subfolders include:
 Covers:
 - File access anomalies  
 - Suspicious sharing links
-- 
 ---
 
 ## 🧪 Query Format
