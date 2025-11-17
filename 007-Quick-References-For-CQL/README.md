@@ -15,9 +15,12 @@
 <pre><code>| rename("Vendor.response_code", as="ResponseCode")</code></pre>
 <hr>
 
-<h2><b>4. Uppercase / Lowercase</b></h2>
-<pre><code>| upper("Vendor.SHA256Hash", as=SHA256Hash)<br><br>
-           | lower("Vendor.SHA256Hash", as=SHA256Hash)</code></pre>
+<h2><b>4. Change Text Case</b></h2>
+<h3><b>Uppercase</b></h3>
+<pre><code>| upper("Vendor.SHA256Hash", as=SHA256Hash)</code></pre>
+
+<h3><b>Lowercase</b></h3>
+<pre><code>| lower("Vendor.SHA256Hash", as=SHA256Hash)</code></pre>
 <hr>
 
 <h2><b>5. CIDR</b></h2>
@@ -32,7 +35,7 @@
 <pre><code>| replace("_", with="@", field=Vendor.UserId, as="UserId")</code></pre>
 <hr>
 
-<h2><b>7. Case (convert decimal/hex to a custom string)</b></h2>
+<h2><b>7. Case (convert specific field value to a custom string)</b></h2>
 <pre><code>| case {
         LogonType = "2"  | LoginType := "Interactive" ;
         LogonType = "3"  | LoginType := "Network" ;
@@ -40,6 +43,6 @@
 <hr>
 
 <h2><b>8. Add a new field/column with an embedded link</b></h2>
-<pre><code>| rootURL := "https://security.microsoft.com/quarantine?viewid=Files"
-           | format("[Link To View Or Release File (requires privileged account)](%s)", field=[rootURL], as="M365Defender")</code></pre>
+<pre><code>| rootURL := "https://security.microsoft.com/quarantine?viewid=Files"<br><br>
+| format("[Link To View Or Release File](%s)", field=[rootURL], as="M365Defender")</code></pre>
 <hr>
