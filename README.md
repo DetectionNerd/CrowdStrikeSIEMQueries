@@ -18,6 +18,8 @@ Queries are organized by log source for easy navigation:
 | Microsoft 365 (Teams, OneDrive, SharePoint) | [`/M365`](./M365) |
 | Cisco Umbrella | [`/Umbrella`](./Umbrella) |
 | Mimecast | [`/Mimecast`](./Mimecast) |
+| PaloAltoNGFW | [`/PaloAltoNGFW`](./PaloAltoNGFW) |
+| WinEventLogs | [`/WinEventLogs`](./WinEventLogs) |
 | Other Log Sources | [`/Other`](./Other) |
 
 ---
