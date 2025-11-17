@@ -13,7 +13,7 @@ Queries are organized by log source for easy navigation:
 
 | Log Source | Folder |
 |-----------|--------|
-| Quick References for CQL | [`/Quick-References-For-CQL`](./Quick-References-For-CQL) |
+| Quick References for CQL | [`/007-Quick-References-For-CQL`](./007-Quick-References-For-CQL) |
 | CrowdStrike Falcon | [`/CrowdStrike-Falcon`](./CrowdStrike-Falcon) |
 | Duo Security | [`/Duo`](./Duo) |
 | Microsoft 365 (Teams, OneDrive, SharePoint) | [`/M365`](./M365) |
