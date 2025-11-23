@@ -1,4 +1,7 @@
-<h2><b>Microsoft 365 Logs </b></h2>
-
-<h5><b>1. Infected File Released from M365 Defender</b></h5>
-<h5><b>2. All M365 Logs</b></h5>
+| Query File/Folder |
+|-----------|
+| [`1. Infected File Released from M365 Defender`](./InfectedFileReleasedfromM365Defender.cql) |
+| [`2. All M365 Logs`](./AllM365Logs.cql) |
+| [`3. Teams`](./Teams) |
+| [`4. SharePoint`](./SharePoint) |
+| [`5. OneDrive`](./OneDrive) |
