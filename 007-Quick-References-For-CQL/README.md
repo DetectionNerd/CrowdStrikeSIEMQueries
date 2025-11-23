@@ -1,9 +1,15 @@
 <h1><b>✨ Quick References for CrowdStrike Query Language</b></h1>
 <hr>
 
-<h2><b>1. Convert Epoch Time to DD Month YYYY, HH:MM:SS</b></h2>
+<h2><b>1. Time Conversions</b></h2>
+<h3><b>Convert Epoch Time to DD Month YYYY, HH:MM:SS</b></h3>
 <span style="color:#00aa00;"><!-- //"America/Los_Angeles" ≅ PST; "America/New_York" ≅ EST (https://library.humio.com/data-analysis/syntax-time-timezones.html) --></span>
 <pre><code>|formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="@timestamp", timezone="America/Los_Angeles")</code></pre>
+
+<h3><b>Convert MM/DD/YYYY, HH:MM:SS timestamp to Epoch, sort it and convert it back to DD Month YYYY, HH:MM:SS</b></h3>
+<pre><code>| findTimestamp(field=VendorTimestamp, as=VendorEpochTime, timezone="America/Los_Angeles")
+| sort(field=VendorEpochTime, order=desc, limit=max)
+|formatTime(format="%d %B %Y, %H:%M:%S", as="VendorPacificTime", field="VendorEpochTime", timezone="America/Los_Angeles")</code></pre>
 <hr>
 
 <h2><b>2. IP Geolocation</b></h2>
@@ -29,6 +35,14 @@
 
 <h3><b>Exclude CIDR</b></h3>
 <pre><code>| !cidr(aip, subnet=["130.130.130.130/24"])</code></pre>
+
+<h3><b>Add Network Type Column using CIDR Match inside Case</b></h3>
+<pre><code>| case {
+	cidr(field=aip, subnet=["130.130.130.130/24", "130.130.130.130/24"]) | NetworkType := "VPN";
+	cidr(field=aip, subnet=["130.130.130.130/23"]) | NetworkType := "Prod";
+	* | NetworkType := "Non-Org. External Network";
+    }
+</code></pre>
 <hr>
 
 <h2><b>6. Replace</b></h2>
@@ -46,3 +60,8 @@
 <pre><code>| rootURL := "https://security.microsoft.com/quarantine?viewid=Files"<br><br>
 | format("[Link To View Or Release File](%s)", field=[rootURL], as="M365Defender")</code></pre>
 <hr>
+
+<h2><b>9. Combine values from two fields into one</b></h2>
+<pre><code>| format(format="%s, %s", field=[Vendor.EventLog.Date, Vendor.EventLog.Time], as="VendorTimestamp")</code></pre>
+<hr>
+
