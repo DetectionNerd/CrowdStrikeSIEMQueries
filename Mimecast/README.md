@@ -1,5 +1,8 @@
-**- SampleQueryTitle1**
-
-**- SampleQueryTitle2**
-
-**- SampleQueryTitle3**
+| Query File/Folder |
+|-----------|
+| [`1. MimecastMaliciousAttachment`](./MimecastMaliciousAttachment.cql) |
+| [`2. MimecastMaliciousAttachmentAVMatch`](./MimecastMaliciousAttachmentAVMatch.cql) |
+| [`3. MimecastMaliciousURL`](./MimecastMaliciousURL.cql) |
+| [`4. MimecastAttachmentAnalysis`](./MimecastAttachmentAnalysis.cql) |
+| [`5. MimecastSecureEmailLogs`](./MimecastSecureEmailLogs.cql) |
+| [`6. MimecastAllLogs`](./MimecastAllLogs.cql) |
