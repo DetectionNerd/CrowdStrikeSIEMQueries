@@ -15,7 +15,7 @@
 | [`13. FalconEDR Desktop-LaptopPatchStatusReport`](./FalconEDRDesktop-LaptopPatchStatusReport.cql) |Windows Patching |
 | [`14. FalconEDR DevicesOnNon-CompliantOS`](./FalconEDRDevicesOnNon-CompliantOS.cql) |OS |
 | [`15. FalconEDR VulnerabilityLogs`](./FalconEDRVulnerabilityLogs.cql) |Vulnerabilities |
-| [`16. FalconEDR FalconEDRForITQueryResults`](./FalconEDRFalconEDRForITQueryResults.cql) |Falcon for IT |
+| [`16. FalconEDR FalconForITQueryResults`](./FalconEDRFalconForITQueryResults.cql) |Falcon for IT |
 | [`17. FalconEDR DCCsRemovalCodeRevealed`](./FalconEDRDCCsRemovalCodeRevealed.cql) |CS Removal Code Revealed |
 | [`18. FalconEDR ServerCsRemovalCodeRevealed`](./FalconEDRServerCsRemovalCodeRevealed.cql) |CS Removal Code Revealed |
 | [`19. FalconEDR DeviceCsRemovalCodeRevealed`](./FalconEDRDeviceCsRemovalCodeRevealed.cql) |CS Removal Code Revealed |
