@@ -22,7 +22,6 @@
 | rename("Vendor.access_device.location.city", as="SourceCity")
 | rename("Vendor.access_device.device_info_source", as="SourceInfoProvider")
 | rename("Vendor.trusted_endpoint_status", as="SourceDeviceTrustStatus")
- 
 | rename("Vendor.auth_device.name", as="MFADevice")
 | rename("Vendor.auth_device.ip", as="MFADeviceIP")
 | rename("Vendor.auth_device.location.country", as="MFADeviceCountry")
