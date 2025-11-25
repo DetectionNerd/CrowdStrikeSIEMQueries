@@ -1,4 +1,4 @@
-| Query File/Folder |
+| Query File |
 |-----------|
 | [`1. MimecastMaliciousAttachment`](./MimecastMaliciousAttachment.cql) |
 | [`2. MimecastMaliciousAttachmentAVMatch`](./MimecastMaliciousAttachmentAVMatch.cql) |
