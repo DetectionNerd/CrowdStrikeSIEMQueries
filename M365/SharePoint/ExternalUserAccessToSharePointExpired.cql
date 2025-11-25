@@ -1,0 +1,12 @@
+(#repo = 3pi_microsoft_teams OR #repo = 3pi_mssharepoint OR #repo = 3pi_microsoft_onedrive) Vendor.Operation=RemovedFromSiteCollection Vendor.ObjectId="https://ikigai.sharepoint.com/sites/ikigaiExternalDataSharing"
+| lower("Vendor.TargetUserOrGroupName", as=Vendor.TargetUserOrGroupName)
+| replace("#ext#@ikigai.onmicrosoft.com", with=" (EXTERNAL) ", field=Vendor.TargetUserOrGroupName, as="ChoppedId1")
+| replace("_", with="@", field=ChoppedId1, as="ChoppedId2")
+| replace("urn:spo:guest#", with=" (EXTERNAL) ", field=ChoppedId2, as="ExternalUser")
+| groupBy([@timestamp, Vendor.Operation, ExternalUser, Vendor.UserId, Vendor.ObjectId], limit=max)
+| sort(field=@timestamp, order=desc, limit=max)
+|formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="@timestamp", timezone="America/Los_Angeles")
+| table([PacificTime, Vendor.Operation, ExternalUser, Vendor.UserId, Vendor.ObjectId], limit=max)
+| rename("Vendor.Operation", as="Operation")
+| rename("Vendor.UserId", as="RemovedBy")
+| rename("Vendor.ObjectId", as="ObjectID")
