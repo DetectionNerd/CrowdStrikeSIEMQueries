@@ -1,4 +1,4 @@
-| Query File/Folder |
+| Query File |
 |-----------|
 | [`1. InfectedFileOnTeams`](./InfectedFileOnTeams.cql) |
 | [`2. TeamsFileActivityEvents`](./TeamsFileActivityEvents.cql) |
