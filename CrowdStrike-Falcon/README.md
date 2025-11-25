@@ -48,3 +48,4 @@
 | [`46. FalconEDR HostGeoLocations`](./FalconEDRHostGeoLocations.cql) |Device Geolocations |
 | [`47. FalconEDR NonStandardDeviceOnProd`](./FalconEDRNonStandardDeviceOnProd.cql) |Device Location |
 | [`48. FalconEDR FalconForITQueryResults`](./FalconEDRFalconForITQueryResults.cql) |Falcon for IT |
+| [`49. FalconEDR FalconForITScriptResults`](./FalconEDRFalconForITScriptResults.cql) |Falcon for IT |
