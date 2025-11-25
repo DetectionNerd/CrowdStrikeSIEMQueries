@@ -1,0 +1,11 @@
+#repo = cisco_duo_mfa #event.dataset=duo.activity Vendor.action.name=admin_lockout
+| sort(field=@timestamp, order=desc, limit=max)
+|formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="@timestamp", timezone="America/Los_Angeles")
+| table([PacificTime, Vendor.action.name, Vendor.target.details.email, Vendor.target.details.msg, Vendor.access_device.ip.address, Vendor.access_device.location.country, Vendor.access_device.location.state, Vendor.access_device.location.city, Vendor.trusted_endpoint_status, Vendor.access_device.device_info_source], limit=max)
+| rename("Vendor.action.name", as="EventType")
+| rename("Vendor.target.details.msg", as="Reason")
+| rename("Vendor.target.details.email", as="DuoAdminLocked")
+| rename("Vendor.access_device.ip.address", as="SourceIP")
+| rename("Vendor.access_device.location.country", as="SourceCountry")
+| rename("Vendor.access_device.location.state", as="SourceState")
+| rename("Vendor.access_device.location.city", as="SourceCity")
