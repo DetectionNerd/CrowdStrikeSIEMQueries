@@ -1,7 +1,7 @@
 #repo = cisco_duo_mfa #event.dataset=duo.activity Vendor.action.name=device_change_notification_answered Vendor.target.details.response_info.answer=fraud Vendor.target.name!="iCloud Keychain"
 |formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="@timestamp", timezone="America/Los_Angeles")
 | table([PacificTime, Vendor.actor.details.email, event.reason, Vendor.target.details.device_modified_info.device_activity_type, Vendor.target.name, Vendor.target.details.response_info.answer, Vendor.access_device.ip.address, Vendor.access_device.location.country, Vendor.access_device.location.state, Vendor.access_device.location.city, Vendor.access_device.os, Vendor.access_device.os_version, Vendor.access_device.browser]
-, limit=200000)
+, limit=max)
 | rename("Vendor.actor.details.email", as="UserEmail")
 | rename("Vendor.target.name", as="TargetName")
 | rename("event.reason", as="Action")
