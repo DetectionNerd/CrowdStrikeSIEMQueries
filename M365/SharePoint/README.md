@@ -1,4 +1,4 @@
-| Query File/Folder |
+| Query File |
 |-----------|
 | [`1. InfectedFileOnSharePoint`](./InfectedFileOnSharePoint.cql) |
 | [`2. SharePointDomainAllowListModified`](./SharePointDomainAllowListModified.cql) |
