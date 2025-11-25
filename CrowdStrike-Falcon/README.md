@@ -1,4 +1,4 @@
-| Query File/Folder | Category |
+| Query File | Category |
 |-----------|--------|
 | [`1. FalconEDR ListOfUsersOnADevice`](./FalconEDRListOfUsersOnADevice.cql) |Login Events |
 | [`2. FalconEDR ListOfDevicesUsedByAUser`](./FalconEDRListOfDevicesUsedByAUser.cql) |Login Events |
