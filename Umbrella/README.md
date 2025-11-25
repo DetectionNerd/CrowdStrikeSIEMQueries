@@ -1,4 +1,4 @@
-| Query File/Folder |
+| Query File |
 |-----------|
 | [`1. UmbrellaDomainActivity`](./UmbrellaDomainActivity.cql) |
 | [`2. UmbrellaUserActivity`](./UmbrellaUserActivity.cql) |
