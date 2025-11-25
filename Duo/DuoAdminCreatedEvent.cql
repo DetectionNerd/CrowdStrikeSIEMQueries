@@ -1,0 +1,11 @@
+#repo = cisco_duo_mfa #event.dataset=duo.activity Vendor.action.name=admin_create
+| sort(field=@timestamp, order=desc, limit=max)
+|formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="@timestamp", timezone="America/Los_Angeles")
+| table([PacificTime, Vendor.action.name, Vendor.target.details.email, Vendor.actor.details.email, Vendor.access_device.ip.address, Vendor.access_device.location.country, Vendor.access_device.location.state, Vendor.access_device.location.city, Vendor.trusted_endpoint_status, Vendor.access_device.device_info_source], limit=max)
+| rename("Vendor.action.name", as="Action")
+| rename("Vendor.target.details.email", as="DuoAdminCreated")
+| rename("Vendor.actor.details.email", as="CreatedBy")
+| rename("Vendor.access_device.ip.address", as="SourceIP")
+| rename("Vendor.access_device.location.country", as="SourceCountry")
+| rename("Vendor.access_device.location.state", as="SourceState")
+| rename("Vendor.access_device.location.city", as="SourceCity")
