@@ -1,4 +1,4 @@
-| Query File/Folder | Category |
+| Query File | Category |
 |-----------|--------|
 | [`1. DuoAdminCreatedEvent`](./DuoAdminCreatedEvent.cql) |Duo Admin |
 | [`2. DuoAdminDeletedEvent`](./DuoAdminDeletedEvent.cql) |Duo Admin |
