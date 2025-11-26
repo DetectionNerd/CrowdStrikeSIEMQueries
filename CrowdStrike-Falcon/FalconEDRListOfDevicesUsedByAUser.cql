@@ -4,7 +4,6 @@
 | (UserName=*IKUGAI*)
 
 // -------------------------------------------------------Modify as per the user you're searching for---------------------------------------
-
 | case {
         LogonType = "2"  | LogonType := "Interactive" ;
         LogonType = "3"  | LogonType := "Network" ;
