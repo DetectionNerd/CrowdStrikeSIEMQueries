@@ -1,0 +1,15 @@
+#event_simpleName=Event_UserActivityAuditEvent OperationName="lift_containment_requested"
+| rename("agent.id", as="aid")
+| aid =~ match(file="aid_master_main.csv", column=aid, strict=false)
+| ProductType=1
+|formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="UTCTimestamp", timezone="America/Los_Angeles")
+| ipLocation(UserIp, as=IP)
+| table([PacificTime, OperationName, ComputerName, aid, UserId, UserIp, IP.country, IP.state, IP.city], limit=max)
+| rename("OperationName", as="Action")
+| rename("aid", as="TargetSensorID")
+| rename("UserId", as="ActionBy")
+| rename("UserIp", as="SourceIP")
+| rename("IP.country", as="Country")
+| rename("IP.state", as="State")
+| rename("IP.city", as="City")
+| rename("ComputerName", as="TargetHost")
