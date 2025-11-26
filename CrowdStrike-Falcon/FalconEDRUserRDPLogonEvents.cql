@@ -1,10 +1,10 @@
 #event_simpleName=UserLogon ClientComputerName="*" | upper("UserName", as=UserName) | aid =~ match(file="aid_master_main.csv", column=aid, strict=false) | match(file="aid_master_main.csv", column="LocalAddressIP4", field=RemoteAddressIP4, include=[ComputerName])
-// ----------------------------Modify as per the User, Logon Host, Source Host or Source IP you're searching for -----------------------------
+// ----------------------------Modify as per the User, Logon Host, Source Host or Source IP you're searching for -------------------------
 | (UserName=IKUGAI OR
    ClientComputerName=PCTEST  OR         //ClientComputerName ≅ Logon Host
    ComputerName=IT OR                    //ComputerName ≅ Source Host
    RemoteAddressIP4=192.168.8.49)       // RemoteAddressIP4 ≅ Source IP
-// ----------------------------Modify as per the User, Logon Host, Source Host or Source IP you're searching for -----------------------------
+// ----------------------------Modify as per the User, Logon Host, Source Host or Source IP you're searching for -------------------------
 | case {
         LogonType = "2"  | LogonType := "Interactive" ;
         LogonType = "3"  | LogonType := "Network" ;
