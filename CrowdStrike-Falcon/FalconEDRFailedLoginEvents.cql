@@ -1,0 +1,11 @@
+#event_simpleName=UserLogonFailed
+| SubStatus_hex := format(field=Status, "0x%x") | upper("SubStatus_hex")
+| $falcon/helper:enrich(field=SubStatus)
+| $falcon/helper:enrich(field=Status)
+| $falcon/helper:enrich(field=LogonType)
+|formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="@timestamp", timezone="America/Los_Angeles")
+| table([PacificTime, UserName, ComputerName, LocalAddressIP4, MAC, aip, LogonType, SubStatus, ClientComputerName, RemoteAddressIP4, AuthenticationId, AuthenticationPackage, LogonServer, SubStatus_hex, aid], limit=max)
+| rename("LocalAddressIP4", as="Local IP")
+| rename("RemoteAddressIP4", as="Source IP")
+| rename("aip", as="Public IP")
+| rename("ClientComputerName", as="SourceHost")
