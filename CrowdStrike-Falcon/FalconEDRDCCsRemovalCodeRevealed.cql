@@ -1,0 +1,17 @@
+#event_simpleName=Event_UserActivityAuditEvent OperationName="reveal_token"
+| rename("Attributes.device_id", as="aid")
+| aid =~ match(file="aid_master_main.csv", column=aid, strict=false)
+| sort(field=@timestamp, order=desc, limit=max)
+|formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="UTCTimestamp", timezone="America/Los_Angeles")
+| ipLocation(UserIp, as=IP)
+| ProductType=2
+| table([PacificTime, OperationName, ComputerName, aid, Attributes.message, UserId, UserIp, IP.country, IP.state, IP.city], limit=max)
+| rename("OperationName", as="Action")
+| rename("aid", as="TargetSensorID")
+| rename("UserId", as="ActionBy")
+| rename("UserIp", as="SourceIP")
+| rename("IP.country", as="Country")
+| rename("IP.state", as="State")
+| rename("IP.city", as="City")
+| rename("ComputerName", as="TargetHost")
+| rename("Attributes.message", as="Message")
