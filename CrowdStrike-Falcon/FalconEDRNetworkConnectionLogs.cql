@@ -1,9 +1,7 @@
 defineTable(query={(#event_simpleName=NetworkConnectIP4 OR #event_simpleName=NetworkConnectIP6)}, include=[ContextProcessId, ConnectionDirection, Protocol, UserName, ComputerName, LocalAddressIP4, LocalPort, LocalAddressIP6, RemoteAddressIP4, RemotePort, RemoteAddressIP6, TcpConnectErrorCode, #event_simpleName, aid, aip], name="netconnect_events") | #event_simpleName=ProcessRollup2 | match(file="netconnect_events", field=[aid, TargetProcessId], column=[aid, ContextProcessId], include=[ConnectionDirection, Protocol, UserName, ComputerName, LocalAddressIP4, LocalPort, LocalAddressIP6, RemoteAddressIP4, RemotePort, RemoteAddressIP6, TcpConnectErrorCode, #event_simpleName, aid, CommandLine, FileName, aip]) | timestamp := @timestamp | upper("UserName", as=UserName)
 // --------------------Modify as per the User, Host, Source IP, Domain or Destination IP you're searching for---------------------------
 
-
 |  UserName=*IKIGAI* OR ComputerName=PCTEST OR LocalAddressIP4=192.168.24.140 OR RemoteAddressIP4=141.95.145.210 OR LocalAddressIP6="2600:4040:b57f:2100:b3g3:59e:ffbd:x234" OR RemoteAddressIP6="2568:3ed:33:0:0:0:0:11"
-
 
 // --------------------Modify as per the User, Host, Source IP, Domain or Destination IP you're searching for---------------------------
 | ipLocation(field=LocalAddressIP4, as=LocalIP4)
