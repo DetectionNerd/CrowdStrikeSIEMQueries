@@ -1,0 +1,13 @@
+#event_simpleName=Event_AuthActivityAuditEvent (OperationName=userAuthenticate) UserIp!="" #event.outcome=success
+| ipLocation(UserIp, as=IP)
+| groupBy([UserId], function=([selectFromMax(field="UTCTimestamp", include=[@timestamp, UserId, OperationName, #event.outcome, UserIp, IP.country, IP.state, IP.city, UTCTimestamp])]), limit=max)
+| sort(field=UTCTimestamp, order=desc, limit=max)
+|formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="UTCTimestamp", timezone="America/Los_Angeles")
+| table([PacificTime, UserId, OperationName, #event.outcome, UserIp, IP.country, IP.state, IP.city], limit=max)
+| rename("UserId", as="CrowdStrikeUserName")
+| rename("#event.outcome", as="Result")
+| rename("_count", as="LoginFailCount")
+| rename("UserIp", as="SourceIP")
+| rename("IP.country", as="Country")
+| rename("IP.state", as="State")
+| rename("IP.city", as="City")
