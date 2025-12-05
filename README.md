@@ -80,14 +80,6 @@ Subfolders include:
 Covers:
 - File access anomalies  
 - Suspicious sharing links
----
 
-## 🧪 Query Format
-
-Each query file includes:
-- **Query Name**  
-- **Description**  
-- **Log Source**
-- **Query Code**  
 
 ```md
