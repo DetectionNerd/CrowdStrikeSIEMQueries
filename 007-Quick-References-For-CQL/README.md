@@ -16,6 +16,14 @@
 |formatTime(format="%d %B %Y, %H:%M:%S", as="ScriptExecutionTime", timezone="America/Los_Angeles")</code></pre>
 <hr>
 
+<h3><b>Define search time window in the query</b></h3>
+<pre><code>| setTimeInterval(start=7d, end=now)</code></pre>
+<hr>
+
+<h3><b>Sliding Time Window</b></h3>
+<pre><code>slidingTimeWindow()</code></pre>
+<hr>
+
 <h2><b>2. IP Geolocation</b></h2>
 <span style="color:#00aa00;"><!-- //Use the fields - IP.country, IP.state, IP.city, IP.lat, IP.lon in  your table --></span>
 <pre><code>| ipLocation(field=Vendor.ClientIP, as=IP)</code></pre>
