@@ -24,9 +24,15 @@
 <pre><code>slidingTimeWindow()</code></pre>
 <hr>
 
-<h2><b>2. IP Geolocation</b></h2>
+<h2><b>2. IP Address </b></h2>
+<h3><b>Geolocation</b></h3>
 <span style="color:#00aa00;"><!-- //Use the fields - IP.country, IP.state, IP.city, IP.lat, IP.lon in  your table --></span>
 <pre><code>| ipLocation(field=Vendor.ClientIP, as=IP)</code></pre>
+
+<h3><b>Lookup the associated Autonomous System Number (ASN) and the Organization</b></h3>
+<h5>The autonomous system number will be written as ip.asn, and organization name as ip.org.</h5>
+
+<pre><code>| asn(field=ip, as=ip)</code></pre>
 <hr>
 
 <h2><b>3. Rename</b></h2>
