@@ -71,7 +71,7 @@
 <h3><b>Captures the username portion of an email address by matching alphanumeric characters and hyphens preceding an @ symbol</b></h3>
 <pre><code>| regex("(?<Vendor.UserName>[a-zA-Z0-9-]+)\s*@", field=Vendor.UserId, strict=false)</code></pre>
 
-<h3><b>Extract string between first = and first ,</b></h3>
+<h3><b>Extract string between first = (equal sign) and first , (comma)</b></h3>
 <pre><code>|formatTime(format="%d %B %Y, %H:%M:%S", as="VendorPacificTime", field="VendorEpochTime", timezone="America/Los_Angeles")</code></pre>
 <hr>
 
