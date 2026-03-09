@@ -101,3 +101,10 @@
 <h3><b>Plot IP locations on a world map widget</b></h3>
 <pre><code>| worldMap(lat=source.ip.lat, lon=source.ip.lon)</code></pre>
 <hr>
+
+<h2><b>12. IOC </b></h2>
+<h5><b>Lookup IP, Domain or URL in CrowdStrike's curated database of IOCs and annotate the events with the associated security information</b></h5>
+<pre><code>| ioc:lookup(field=phishurl, type=url, confidenceThreshold=unverified)
+| default(value="No CrowdStrike intelligence available for this IOC.", field=[ioc[0].labels])
+| groupBy([Vendor.timestamp,phishurl], function=([collect([Vendor.timestamp,phishurl, phishcat, ioc[0].labels, email.from.address[0], email.to.address[0]])]))</code></pre>
+<hr>
