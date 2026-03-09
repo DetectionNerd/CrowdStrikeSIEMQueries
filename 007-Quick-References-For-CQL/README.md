@@ -91,3 +91,13 @@
 <pre><code>| format(format="%s, %s", field=[Vendor.EventLog.Date, Vendor.EventLog.Time], as="VendorTimestamp")</code></pre>
 <hr>
 
+<h2><b>11. Dashboard </b></h2>
+<h3><b>Ignore case for dashboard input</b></h3>
+<pre><code>| Vendor.user.name =~wildcard(?UserName, ignoreCase=true)</code></pre>
+
+<h3><b>Sub-string search</b></h3>
+<pre><code>| text:contains(string=@rawstring, substring=?UserName)</code></pre>
+
+<h3><b>Plot IP locations on a world map widget</b></h3>
+<pre><code>| worldMap(lat=source.ip.lat, lon=source.ip.lon)</code></pre>
+<hr>
