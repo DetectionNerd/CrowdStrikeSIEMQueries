@@ -61,19 +61,27 @@
 <pre><code>| replace("_", with="@", field=Vendor.UserId, as="UserId")</code></pre>
 <hr>
 
-<h2><b>7. Case (convert specific field value to a custom string)</b></h2>
+<h2><b>7. RegEx </b></h2>
+<h3><b>Captures the username portion of an email address by matching alphanumeric characters and hyphens preceding an @ symbol</b></h3>
+<pre><code>| regex("(?<Vendor.UserName>[a-zA-Z0-9-]+)\s*@", field=Vendor.UserId, strict=false)</code></pre>
+
+<h3><b>Extract string between first = and first ,</b></h3>
+<pre><code>|formatTime(format="%d %B %Y, %H:%M:%S", as="VendorPacificTime", field="VendorEpochTime", timezone="America/Los_Angeles")</code></pre>
+<hr>
+
+<h2><b>8. Case (convert specific field value to a custom string)</b></h2>
 <pre><code>| case {
         LogonType = "2"  | LoginType := "Interactive" ;
         LogonType = "3"  | LoginType := "Network" ;
         * }</code></pre>
 <hr>
 
-<h2><b>8. Add a new field/column with an embedded link</b></h2>
+<h2><b>9. Add a new field/column with an embedded link</b></h2>
 <pre><code>| rootURL := "https://security.microsoft.com/quarantine?viewid=Files"<br><br>
 | format("[Link To View Or Release File](%s)", field=[rootURL], as="M365Defender")</code></pre>
 <hr>
 
-<h2><b>9. Combine values from two fields into one</b></h2>
+<h2><b>10. Combine values from two fields into one</b></h2>
 <pre><code>| format(format="%s, %s", field=[Vendor.EventLog.Date, Vendor.EventLog.Time], as="VendorTimestamp")</code></pre>
 <hr>
 
