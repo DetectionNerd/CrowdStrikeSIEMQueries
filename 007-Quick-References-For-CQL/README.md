@@ -1,7 +1,7 @@
 <h1><b>✨ Quick References for CrowdStrike Query Language</b></h1>
 <hr>
 
-<h2><b>1. Time Conversions</b></h2>
+<h2><b>1. Time </b></h2>
 <h3><b>Convert Epoch Time to DD Month YYYY, HH:MM:SS</b></h3>
 <span style="color:#00aa00;"><!-- //"America/Los_Angeles" ≅ PST; "America/New_York" ≅ EST (https://library.humio.com/data-analysis/syntax-time-timezones.html) --></span>
 <pre><code>|formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="@timestamp", timezone="America/Los_Angeles")</code></pre>
