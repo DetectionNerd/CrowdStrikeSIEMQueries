@@ -10,6 +10,10 @@
 <pre><code>| findTimestamp(field=VendorTimestamp, as=VendorEpochTime, timezone="America/Los_Angeles")
 | sort(field=VendorEpochTime, order=desc, limit=max)
 |formatTime(format="%d %B %Y, %H:%M:%S", as="VendorPacificTime", field="VendorEpochTime", timezone="America/Los_Angeles")</code></pre>
+
+<h4><b>Convert any timestamp format to Epoch Time and then convert it back to DD Month YYYY, HH:MM:SS</b></h3>
+<pre><code>| parseTimestamp(field="result.datetime")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="ScriptExecutionTime", timezone="America/Los_Angeles")</code></pre>
 <hr>
 
 <h2><b>2. IP Geolocation</b></h2>
