@@ -72,7 +72,7 @@
 <pre><code>| regex("(?<Vendor.UserName>[a-zA-Z0-9-]+)\s*@", field=Vendor.UserId, strict=false)</code></pre>
 
 <h3><b>Extract string between first = (equal sign) and first , (comma)</b></h3>
-<pre><code>|formatTime(format="%d %B %Y, %H:%M:%S", as="VendorPacificTime", field="VendorEpochTime", timezone="America/Los_Angeles")</code></pre>
+<pre><code>| regex("^[^=]+=(?<TargetAccount>[^,]+)", field=windows.EventData.MemberName, strict=false)</code></pre>
 <hr>
 
 <h2><b>8. Case (convert specific field value to a custom string)</b></h2>
