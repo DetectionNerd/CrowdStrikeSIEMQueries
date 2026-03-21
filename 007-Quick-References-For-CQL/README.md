@@ -69,7 +69,7 @@
 
 <h2><b>7. RegEx </b></h2>
 <h3><b>Captures the username portion of an email address by matching alphanumeric characters and hyphens preceding an @ symbol</b></h3>
-<pre><code>| regex("(?<Vendor./UserName>[a-zA-Z0-9-]+)\s*@", field=Vendor.UserId, strict=false)</code></pre>
+<pre><code>| regex("(?<Vendor./UserName>[a-zA-Z0-9.-]+)\s*@", field=Vendor.UserId, strict=false)</code></pre>
 
 <h3><b>Extract string between first = (equal sign) and first , (comma)</b></h3>
 <pre><code>| regex("^[^=]+=(?<TargetAccount>[^,]+)", field=windows.EventData.MemberName, strict=false)</code></pre>
