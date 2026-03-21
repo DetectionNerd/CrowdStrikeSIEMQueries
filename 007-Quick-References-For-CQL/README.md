@@ -3,7 +3,7 @@
 
 <h2><b>1. Time </b></h2>
 <h3><b>Convert Epoch Time to DD Month YYYY, HH:MM:SS</b></h3>
-<span style="color:#00aa00;"><!-- //"America/Los_Angeles" ≅ PST; "America/New_York" ≅ EST (https://library.humio.com/data-analysis/syntax-time-timezones.html) --></span>
+<span style="color:#00aa00;"><!-- //"America/Los_Angeles" ≅ PST; "America/Los_Angeles" ≅ EST (https://library.humio.com/data-analysis/syntax-time-timezones.html) --></span>
 <pre><code>|formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="@timestamp", timezone="America/Los_Angeles")</code></pre>
 
 <h3><b>Convert MM/DD/YYYY, HH:MM:SS timestamp to Epoch Time, sort it and convert it back to DD Month YYYY, HH:MM:SS</b></h3>
@@ -27,12 +27,14 @@
 <h2><b>2. IP Address </b></h2>
 <h3><b>Geolocation</b></h3>
 <span style="color:#00aa00;"><!-- //Use the fields - IP.country, IP.state, IP.city, IP.lat, IP.lon in  your table --></span>
-<pre><code>| ipLocation(field=Vendor.ClientIP, as=IP)</code></pre>
+<pre><code>| ipLocation(field=Vendor.ClientIP, as=IP)
+| table([IP.Country, IP.State, IP.City])</code></pre>
 
 <h3><b>Lookup the associated Autonomous System Number (ASN) and the Organization</b></h3>
 <h5>The autonomous system number will be written as ip.asn, and organization name as ip.org.</h5>
 
-<pre><code>| asn(field=ip, as=ip)</code></pre>
+<pre><code>| asn(field=ip, as=ip
+| table([ip.org, ip.asn])</code></pre>
 <hr>
 
 <h2><b>3. Rename</b></h2>
@@ -102,9 +104,26 @@
 <pre><code>| worldMap(lat=source.ip.lat, lon=source.ip.lon)</code></pre>
 <hr>
 
-<h2><b>12. IOC </b></h2>
-<h5><b>Lookup IP, Domain or URL in CrowdStrike's curated database of IOCs and annotate the events with the associated security information</b></h5>
-<pre><code>| ioc:lookup(field=phishurl, type=url, confidenceThreshold=unverified)
-| default(value="No CrowdStrike intelligence available for this IOC.", field=[ioc[0].labels])
-| groupBy([Vendor.timestamp,phishurl], function=([collect([Vendor.timestamp,phishurl, phishcat, ioc[0].labels, email.from.address[0], email.to.address[0]])]))</code></pre>
+<h2><b>12. IOC Lookup </b></h2>
+<h3><b>Enrich events with IP, Domain or URL lookup in CrowdStrike's curated database of IOCs and annotate the events with the associated security information</b></h3>
+<h5><b>IP</b></h5>
+<pre><code>| ioc:lookup(field=source.ip, type=ip_address, confidenceThreshold=unverified, strict=false, prefix=ipioc, include=[last_updated, malicious_confidence, labels, published_date, indicator, type])
+| default(value="No CrowdStrike intelligence available for this IP", field="ipioc[0].labels")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCLastUpdatedIP", field="ipioc[0].last_updated", timezone="America/Los_Angeles")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCPublishedIP", field="ipioc[0].published_date", timezone="America/Los_Angeles")
+| table([ipioc.detected, ipioc[0].indicator, IOCLastUpdatedIP, ipioc[0].malicious_confidence, ipioc[0].labels, IOCPublishedIP])</code></pre>
+
+<h5><b>Domain</b></h5>
+<pre><code>| ioc:lookup(field=user.domain, type=domain, confidenceThreshold=unverified, strict=false, prefix=domainioc, include=[last_updated, malicious_confidence, labels, published_date, indicator, type])
+| default(value="No CrowdStrike intelligence available for this Domain", field="domainioc[0].labels")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCLastUpdatedDomain", field="domainioc[0].last_updated", timezone="America/Los_Angeles")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCPublishedDomain", field="domainioc[0].published_date", timezone="America/Los_Angeles")
+| table([domainioc.detected, domainioc[0].indicator, IOCLastUpdatedDomain, domainioc[0].malicious_confidence, domainioc[0].labels, IOCPublishedDomain])</code></pre>
+
+<h5><b>URL</b></h5>
+<pre><code>| ioc:lookup(field=url, type=url, confidenceThreshold=unverified, strict=false, prefix=URLioc, include=[last_updated, malicious_confidence, labels, published_date, indicator, type])
+| default(value="No CrowdStrike intelligence available for this URL", field="URLioc[0].labels")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCLastUpdatedURL", field="URLioc[0].last_updated", timezone="America/Los_Angeles")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCPublishedURL", field="URLioc[0].published_date", timezone="America/Los_Angeles")
+| table([URLioc.detected, URLioc[0].indicator, IOCLastUpdatedURL, URLioc[0].malicious_confidence, URLioc[0].labels, IOCPublishedURL])</code></pre>
 <hr>
