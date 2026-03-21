@@ -49,16 +49,16 @@
 
 <h2><b>5. CIDR</b></h2>
 <h3><b>Match CIDR</b></h3>
-<pre><code>| cidr(aip, subnet=["130.130.130.130/24"])</code></pre>
+<pre><code>| cidr(aip, subnet=["120.120.120.120/24"])</code></pre>
 
 <h3><b>Exclude CIDR</b></h3>
-<pre><code>| !cidr(aip, subnet=["130.130.130.130/24"])</code></pre>
+<pre><code>| !cidr(aip, subnet=["120.120.120.120/24"])</code></pre>
 
 <h3><b>Add Network Type column using CIDR match inside case</b></h3>
 <pre><code>| case {
-	cidr(field=aip, subnet=["130.130.130.130/24", "130.130.130.130/24"]) | NetworkType := "VPN";
-	cidr(field=aip, subnet=["130.130.130.130/23"]) | NetworkType := "Prod";
-	* | NetworkType := "Non-Org. External Network";
+	cidr(field=aip, subnet=["120.120.120.120/24", "120.120.120.120/24"]) | NetworkType := "VPN";
+	cidr(field=aip, subnet=["120.120.120.120/23"]) | NetworkType := "Prod";
+	* | NetworkType := "External";
     }
 </code></pre>
 <hr>
