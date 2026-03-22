@@ -1,5 +1,5 @@
 
-Account Take Over by Social Engineering
+Duo + AD + Workday Account Take Over by Social Engineering
 
 - Threat Actor calls IT Help Desk 
 - Convinces HD to add/change Duo MFA Phone Number 
