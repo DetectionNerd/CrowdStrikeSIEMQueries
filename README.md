@@ -19,9 +19,11 @@ Queries are organized by log source for easy navigation:
 | Threat Hunting | [`/ThreatHunting`](./ThreatHunting) |
 | CrowdStrike Falcon | [`/CrowdStrike-Falcon`](./CrowdStrike-Falcon) |
 | Duo Security | [`/Duo`](./Duo) |
+| Entra ID | [`/EntraID`](./EntraID) |
 | Microsoft 365 (Teams, OneDrive, SharePoint) | [`/M365`](./M365) |
 | Cisco Umbrella | [`/Umbrella`](./Umbrella) |
 | Mimecast | [`/Mimecast`](./Mimecast) |
+| Windows Event Logs (via on-prem LogScale collector) | [`/WinEventLogs`](./WinEventLogs) |
 | Other Log Sources | [`/Other`](./Other) |
 
 ---
