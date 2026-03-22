@@ -1,7 +1,7 @@
 #repo = "3pi_windows_ad" (windows.EventID=4729)
 (
-windows.EventData.TargetUserName="Domain Admins" OR 
-windows.EventData.TargetUserName="Server Admins"
+windows.EventData.TargetUserName="DA" OR 
+windows.EventData.TargetUserName="IT"
 )
 | case {
         windows.EventID = 4729 | Action := "Removed from Privileged Group";
