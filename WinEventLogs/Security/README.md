@@ -6,7 +6,7 @@
 | [`4. Account Deleted`](./ADAccountDeleted.cql) |
 | [`5. Account Enabled`](./ADAccountEnabled.cql) |
 | [`6. Account Disabled`](./ADAccountDisabled.cql) |
-| [`7. Account Locked Out`](./AccountLockedOut.cql) |
+| [`7. Account Locked Out`](./ADAccountLockedOut.cql) |
 | [`8. Account Unlocked`](./ADAccountUnlocked.cql) |
 | [`9. GPO Changes`](./GPOChanges.cql) |
 | [`10. Password Change Attempted`](./ADPasswordChangeAttempted.cql) |
