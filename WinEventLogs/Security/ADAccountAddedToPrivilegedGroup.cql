@@ -1,7 +1,7 @@
 #repo = "3pi_windows_ad" (windows.EventID=4728)
 (
 windows.EventData.TargetUserName="DA" OR 
-windows.EventData.TargetUserName="IT" OR
+windows.EventData.TargetUserName="IT"
 )
 | case {
         windows.EventID = 4728 | Action := "Added to Privileged Group";
