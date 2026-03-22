@@ -1,6 +1,6 @@
 | Query File |
 |-----------|
-| [`1. Account Added to Privileged Group`](./FalconEDRListOfUsersOnADevice.cql) |
+| [`1. Account Added to Privileged Group`](./ADAccountAddedToPrivilegedGroup.cql) |
 | [`2. Account Removed from Privileged Group`](./ADAccountRemovedFromPrivilegedGroup.cql) |
 | [`3. Account Created`](./ADAccountCreated.cql) |
 | [`4. Account Deleted`](./ADAccountDeleted.cql) |
