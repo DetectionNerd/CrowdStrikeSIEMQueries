@@ -105,7 +105,7 @@
 <hr>
 
 <h2><b>12. IOC Lookup </b></h2>
-<h3><b>Enrich events with IP, Domain or URL lookup in CrowdStrike's curated database of IOCs and annotate the events with the associated security information</b></h3>
+<h3><b>Enrich events with IP, Domain or URL lookup info from CrowdStrike's curated database of IOCs </b></h3>
 <h5><b>IP</b></h5>
 <pre><code>| ioc:lookup(field=Vendor.access_device.ip, type=ip_address, confidenceThreshold=unverified, strict=false, prefix=ip1ioc, include=[last_updated, malicious_confidence, labels, published_date, indicator, type])
 | default(value="No CrowdStrike intelligence available for this IP", field="ip1ioc[0].labels")
