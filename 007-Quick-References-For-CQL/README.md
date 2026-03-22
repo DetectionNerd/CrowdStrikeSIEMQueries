@@ -107,23 +107,26 @@
 <h2><b>12. IOC Lookup </b></h2>
 <h3><b>Enrich events with IP, Domain or URL lookup in CrowdStrike's curated database of IOCs and annotate the events with the associated security information</b></h3>
 <h5><b>IP</b></h5>
-<pre><code>| ioc:lookup(field=source.ip, type=ip_address, confidenceThreshold=unverified, strict=false, prefix=ipioc, include=[last_updated, malicious_confidence, labels, published_date, indicator, type])
-| default(value="No CrowdStrike intelligence available for this IP", field="ipioc[0].labels")
-|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCLastUpdatedIP", field="ipioc[0].last_updated", timezone="America/Los_Angeles")
-|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCPublishedIP", field="ipioc[0].published_date", timezone="America/Los_Angeles")
-| table([ipioc.detected, ipioc[0].indicator, IOCLastUpdatedIP, ipioc[0].malicious_confidence, ipioc[0].labels, IOCPublishedIP])</code></pre>
+<pre><code>| ioc:lookup(field=Vendor.access_device.ip, type=ip_address, confidenceThreshold=unverified, strict=false, prefix=ip1ioc, include=[last_updated, malicious_confidence, labels, published_date, indicator, type])
+| default(value="No CrowdStrike intelligence available for this IP", field="ip1ioc[0].labels")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCLastUpdatedIP1", field="ip1ioc[0].last_updated", timezone="America/Los_Angeles")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCPublishedIP1", field="ip1ioc[0].published_date", timezone="America/Los_Angeles")
+| rename(field="ip1.asn", as="AsnIP1") | rename(field="ip1ioc.detected", as="IOCDetectedIP1") | rename(field="ip1ioc[0].indicator", as="IocIP1") | rename(field="ip1ioc[0].malicious_confidence", as="IOCConfidenceIP1") | rename(field="ip1ioc[0].labels", as="IOCLabelsIP1")
+| table([IOCDetectedIP1, IocIP1, IOCLastUpdatedIP1, IOCConfidenceIP1, IOCLabelsIP1, IOCPublishedIP1])</code></pre>
 
 <h5><b>Domain</b></h5>
 <pre><code>| ioc:lookup(field=user.domain, type=domain, confidenceThreshold=unverified, strict=false, prefix=domainioc, include=[last_updated, malicious_confidence, labels, published_date, indicator, type])
 | default(value="No CrowdStrike intelligence available for this Domain", field="domainioc[0].labels")
 |formatTime(format="%d %B %Y, %H:%M:%S", as="IOCLastUpdatedDomain", field="domainioc[0].last_updated", timezone="America/Los_Angeles")
 |formatTime(format="%d %B %Y, %H:%M:%S", as="IOCPublishedDomain", field="domainioc[0].published_date", timezone="America/Los_Angeles")
-| table([domainioc.detected, domainioc[0].indicator, IOCLastUpdatedDomain, domainioc[0].malicious_confidence, domainioc[0].labels, IOCPublishedDomain])</code></pre>
+| rename(field="domainioc.detected", as="IOCDetectedDomain") | rename(field="domainioc[0].indicator", as="IOCDomain") | rename(field="domainioc[0].malicious_confidence", as="IOCConfidenceDomain") | rename(field="domainioc[0].labels", as="IOCLabelsDomain")
+| table([IOCDetectedDomain, IOCDomain, IOCLastUpdatedDomain, IOCConfidenceDomain, IOCLabelsDomain, IOCPublishedDomain])</code></pre>
 
 <h5><b>URL</b></h5>
 <pre><code>| ioc:lookup(field=url, type=url, confidenceThreshold=unverified, strict=false, prefix=URLioc, include=[last_updated, malicious_confidence, labels, published_date, indicator, type])
 | default(value="No CrowdStrike intelligence available for this URL", field="URLioc[0].labels")
 |formatTime(format="%d %B %Y, %H:%M:%S", as="IOCLastUpdatedURL", field="URLioc[0].last_updated", timezone="America/Los_Angeles")
 |formatTime(format="%d %B %Y, %H:%M:%S", as="IOCPublishedURL", field="URLioc[0].published_date", timezone="America/Los_Angeles")
-| table([URLioc.detected, URLioc[0].indicator, IOCLastUpdatedURL, URLioc[0].malicious_confidence, URLioc[0].labels, IOCPublishedURL])</code></pre>
+| rename(field="URLioc.detected", as="IOCDetectedURL") | rename(field="URLioc[0].indicator", as="IocURL") | rename(field="URLioc[0].malicious_confidence", as="IOCConfidenceURL") | rename(field="URLioc[0].labels", as="IOCLabelsURL")
+| table([IOCDetectedURL, IocURL, IOCLastUpdatedURL, IOCConfidenceURL, IOCLabelsURL, IOCPublishedURL])</code></pre>
 <hr>
