@@ -65,11 +65,10 @@
 </code></pre>
 
 <h3><b>Compare event IP fields with CIDR ranges in lookup table using the match() function with mode parameter</b></h3>
-<pre><code>| case {
-	cidr(field=aip, subnet=["120.120.120.120/24", "120.120.120.120/24"]) | NetworkType := "VPN";
-	cidr(field=aip, subnet=["120.120.120.120/23"]) | NetworkType := "Prod";
-	* | NetworkType := "External";
-    }
+<pre><code>| match(file="NetworkCIDRLookup1.csv", column="CIDR1", field=Vendor.access_device.ip, mode=cidr, strict=false, include=["NetworkType1"]) | rename(field="NetworkType1", as="SourceNetworkType")
+| match(file="NetworkCIDRLookup2.csv", column="CIDR2", field=Vendor.auth_device.ip, mode=cidr, strict=false, include=["NetworkType2"]) | rename(field="NetworkType2", as="MFADeviceNetworkType")
+| default(value="External", field="SourceNetworkType")
+| default(value="External", field="MFADeviceNetworkType")
 </code></pre>
 <hr>
 
