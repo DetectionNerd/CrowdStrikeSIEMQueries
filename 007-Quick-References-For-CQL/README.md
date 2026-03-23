@@ -63,6 +63,14 @@
 	* | NetworkType := "External";
     }
 </code></pre>
+
+<h3><b>Compare event IP fields with CIDR ranges in lookup table using the match() function with mode parameter</b></h3>
+<pre><code>| case {
+	cidr(field=aip, subnet=["120.120.120.120/24", "120.120.120.120/24"]) | NetworkType := "VPN";
+	cidr(field=aip, subnet=["120.120.120.120/23"]) | NetworkType := "Prod";
+	* | NetworkType := "External";
+    }
+</code></pre>
 <hr>
 
 <h2><b>6. Replace</b></h2>
