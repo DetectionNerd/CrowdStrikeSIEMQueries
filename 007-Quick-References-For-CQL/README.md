@@ -33,7 +33,7 @@
 <h3><b>Lookup the associated Autonomous System Number (ASN) and the Organization</b></h3>
 <h5>The autonomous system number will be written as ip.asn, and organization name as ip.org.</h5>
 
-<pre><code>| asn(field=ip, as=ip
+<pre><code>| asn(field=ip, as=ip)
 | table([ip.org, ip.asn])</code></pre>
 <hr>
 
