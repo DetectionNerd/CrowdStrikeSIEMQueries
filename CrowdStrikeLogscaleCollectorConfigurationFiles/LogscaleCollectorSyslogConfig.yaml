@@ -1,1 +1,12 @@
-
+sources:
+  syslog_udp_532:
+    type: syslog
+    mode: tcp
+    port: 532
+    sink: ngsiem
+sinks:
+  ngsiem:
+    type: hec
+    proxy: none
+    token: <insert token>
+    url: <insert url (should end with crowdstrike.com)>
