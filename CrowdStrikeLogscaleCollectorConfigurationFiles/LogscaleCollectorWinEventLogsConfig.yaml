@@ -1,1 +1,16 @@
-
+sources:
+  windows_events:
+    type: wineventlog
+    format: renderFieldsWithXML
+    channels:
+      - name: Security
+        onlyEventIDs: [4723, 4724, 4728, 4729, 4720, 5137, 5141, 4722, 4725, 4740, 4767, 4726, 5136, 4624, 4625, 4634, 4647, 4672, 4648]
+      - name: System
+        onlyEventIDs: [1074]
+    sink: ngsiem
+sinks:
+  ngsiem:
+    type: hec
+    proxy: none
+    token: <insert token>
+    url: <insert url (should end with crowdstrike.com>
