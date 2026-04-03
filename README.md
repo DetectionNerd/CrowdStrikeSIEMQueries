@@ -24,7 +24,6 @@ Queries are organized by log source for easy navigation:
 | Cisco Umbrella | [`/Umbrella`](./Umbrella) |
 | Mimecast | [`/Mimecast`](./Mimecast) |
 | Windows Event Logs (via on-prem LogScale collector) | [`/WinEventLogs`](./WinEventLogs) |
-| Other Log Sources | [`/Other`](./Other) |
 
 ---
 
