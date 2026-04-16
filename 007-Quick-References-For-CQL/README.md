@@ -137,3 +137,17 @@
 | rename(field="URLioc.detected", as="IOCDetectedURL") | rename(field="URLioc[0].indicator", as="IocURL") | rename(field="URLioc[0].malicious_confidence", as="IOCConfidenceURL") | rename(field="URLioc[0].labels", as="IOCLabelsURL")
 | table([IOCDetectedURL, IocURL, IOCLastUpdatedURL, IOCConfidenceURL, IOCLabelsURL, IOCPublishedURL])</code></pre>
 <hr>
+
+<h2><b>13. Create events for testing</b></h2>
+<pre><code>createEvents("client_ip=38.92.47.91") 
+| kvParse()</code></pre>
+<hr>
+
+<h2><b>14. Convert values between different units</b></h2>
+<pre><code>| unit:convert(TotalBytes, as="TotalBytes", to="G")</code></pre>
+<hr>
+
+<h2><b>15. Evaluate Query Performance</b></h2>
+<h5><b>This function analyzes query performance and identifies bottlenecks or incorrect filters. It activates profiling mode, which collects performance statistics during event processing, including processing time, event counts, and prefilter effectiveness.</b></h5>
+<pre><code>| explain:asTable(showPrefilters=true)</code></pre>
+<hr>
