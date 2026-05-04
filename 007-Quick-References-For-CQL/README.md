@@ -84,6 +84,14 @@
 <pre><code>| regex("^[^=]+=(?<TargetAccount>[^,]+)", field=windows.EventData.MemberName, strict=false)</code></pre>
 <hr>
 
+<h3><b>Normalize and Extract base-domain from sub-domain</b></h3>
+<pre><code>// Normalize input as a URI so we can reliably work with hostnames
+| parseUri(DomainName, defaultBase="https://")
+// Extract the registrable/base domain into base_domain (extend TLD list as needed)
+| DomainName.host=/(?<base_domain>[-a-zA-Z0-9]+\.(?:co\.uk|com\.tr|com|net|org|edu|gov|io|co|ai|in))$</code></pre>
+<hr>
+
+
 <h2><b>8. Case (convert specific field value to a custom string)</b></h2>
 <pre><code>| case {
         LogonType = "2"  | LoginType := "Interactive" ;
