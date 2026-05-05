@@ -17,6 +17,7 @@ Queries are organized by log source for easy navigation:
 |-----------|--------|
 | Quick References for CQL | [`/007-Quick-References-For-CQL`](./007-Quick-References-For-CQL) |
 | Threat Hunting | [`/ThreatHunting`](./ThreatHunting) |
+| Cross-Domain Searches | [`/ThreatHunting`](./ThreatHunting) |
 | CrowdStrike Logscale Collector Config. Files | [`/CrowdStrikeLogscaleCollectorConfigurationFiles`](./CrowdStrikeLogscaleCollectorConfigurationFiles) |
 | CrowdStrike Falcon | [`/CrowdStrike-Falcon`](./CrowdStrike-Falcon) |
 | Duo Security | [`/Duo`](./Duo) |
