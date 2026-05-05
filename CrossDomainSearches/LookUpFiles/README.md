@@ -2,7 +2,6 @@ Lookup files are based on CrowdStrike's own **falcon/ngsiem-content-ai/GenAIKeyw
 
 | Query File |
 |-----------|
-| [`1. AIUsageOverview`](./AIUsageOverview.cql) |
-| [`2. FilesMatchAIKeyword`](./FilesMatchAIKeyword.cql) |
-| [`3. LookUpFiles`](./LookUpFiles) |
+| [`1. GenAIKeyword`](./GenAIKeyword.csv) |
+| [`2. GenAIKeywordsForDownload`](./GenAIKeywordsForDownload.csv) |
 
