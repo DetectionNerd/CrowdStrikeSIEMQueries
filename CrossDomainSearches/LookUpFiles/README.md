@@ -1,1 +1,1 @@
-Lookup files are a modified/enriched version of CrowdStrike's own **falcon/ngsiem-content-ai/GenAIKeywords.csv** lookup file
+Lookup files are a modified/enriched version of CrowdStrike's own **falcon/ngsiem-content-ai/GenAIKeywords.csv** lookup file, for better aggregation searches
