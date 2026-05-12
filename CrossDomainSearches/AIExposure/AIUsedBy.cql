@@ -9,7 +9,7 @@ defineTable(query={
     Vendor.Domain=* | Domain := Vendor.Domain;
     * | Domain := null;
 }
-| match(file="GenAIKeywords.csv", column="AIDomainName1", field=Domain, mode=glob, strict=true, include=["AIProductName"])
+| match(file="GenAIKeyword.csv", column="AIDomainName1", field=Domain, mode=glob, strict=true, include=["AIProductName"])
 }, include=[aid, AIProductName, ContextProcessId, Vendor.identities], name="downloaded_files") | #event_simpleName=ProcessRollup2 | match(file="downloaded_files", field=[aid, TargetProcessId], column=[aid, ContextProcessId], include=[AIProductName, Vendor.identities]) | upper("UserName", as=CrowdStrike.UserName)
 | regex("(?<Vendor.UserName>[a-zA-Z0-9-]+)\s*\(", field=Vendor.identities, strict=false)
 | upper("Vendor.UserName", as="Vendor.UserName")
