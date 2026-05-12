@@ -6,8 +6,8 @@
 | [`4. Entra ID Sign-in Attempt from Malicious Domain`](./EntraIDSign-inAttemptfromMaliciousDomain.cql) |
 | [`5. Files Downloaded from Malicious Domain`](./FilesDownloadedfromMaliciousDomain.cql) |
 | [`6. Files Downloaded from Malicious URL`](./FilesDownloadedfromMaliciousURL.cql) |
-| [`7. Malicious Domains`](./MaliciousDomains.cql) |
-| [`8. Malicious Base Domains`](./MaliciousBaseDomains.cql) |
+| [`7. Malicious Domains Aggregated`](./MaliciousDomainsAggregated.cql) |
+| [`8. Malicious Base Domains Aggregated`](./MaliciousBaseDomainsAggregated.cql) |
 | [`9. Malicious Domains Allowed (details)`](./MaliciousDomainsAllowed(details).cql) |
 | [`10. Malicious Base Domains Allowed (details)`](./MaliciousBaseDomainsAllowed(details).cql) |
 | [`11. Malicious URL on Teams Chat`](./MaliciousURLonTeamsChat.cql) |
