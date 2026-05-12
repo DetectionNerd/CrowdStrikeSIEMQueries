@@ -1,1 +1,32 @@
-
+(#repo = 3pi_microsoft_teams OR #repo = 3pi_mssharepoint OR #repo = 3pi_microsoft_onedrive)
+| ioc:lookup(field=Vendor.ClientIP, type=ip_address, confidenceThreshold=unverified, strict=true, prefix=ip1ioc, include=[last_updated, malicious_confidence, labels, published_date, indicator, type])
+| match(file="NetworkCIDRLookup1.csv", column="CIDR1", field=Vendor.ClientIP, mode=cidr, strict=false, include=["NetworkType1"]) | rename(field="NetworkType1", as="SourceNetworkType")
+| default(value="External", field="SourceNetworkType")
+| asn(field=Vendor.ClientIP, as=ip1)
+| default(value="External", field="SourceNetworkType")
+| default(value="No CrowdStrike intelligence available for this IP", field="ip1ioc[0].labels")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCLastUpdatedIP1", field="ip1ioc[0].last_updated", timezone="America/Los_Angeles")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="IOCPublishedIP1", field="ip1ioc[0].published_date", timezone="America/Los_Angeles")
+| rename(field="ip1.asn", as="AsnIP1") | rename(field="ip1ioc.detected", as="IOCDetectedIP1") | rename(field="ip1ioc[0].indicator", as="IocIP1") | rename(field="ip1ioc[0].malicious_confidence", as="IOCConfidenceIP1") | rename(field="ip1ioc[0].labels", as="IOCLabelsIP1")
+| ipLocation(field=Vendor.ClientIP, as=IP)
+| lower("Vendor.UserId", as=Vendor.UserId)
+| replace("#ext#@abcd.onmicrosoft.com", with=" (EXTERNAL)", field=Vendor.UserId, as="ChoppedId1")
+| replace("_", with="@", field=ChoppedId1, as="ChoppedId2")
+| replace("urn:spo:guest#", with="(EXTERNAL) ", field=ChoppedId2, as="UserId")
+|formatTime(format="%d %B %Y, %H:%M:%S", as="PacificTime", field="@timestamp", timezone="America/Los_Angeles")
+| case {
+       #repo = "3pi_microsoft_teams"  | LogSource := "Teams" ;
+       #repo = "3pi_mssharepoint"  | LogSource := "SharePoint" ;
+       #repo = "3pi_microsoft_onedrive"  | LogSource := "OneDrive" ;
+       }
+| upper(field="source.domain", as=HostName)
+| table([PacificTime, LogSource, Vendor.Operation,  UserId, HostName, Vendor.TeamName, Vendor.ChannelName, Vendor.ChatName, Vendor.SourceFileName, Vendor.SourceFileExtension, IOCDetectedIP1, IocIP1, IOCLastUpdatedIP1, IOCConfidenceIP1, IOCLabelsIP1, IOCPublishedIP1, SourceNetworkType, Vendor.ClientIP, IP.country, IP.state, IP.city, SourceNetworkProvider, AsnIP1, Vendor.FileSizeBytes, Vendor.ObjectId], limit=max)
+| rename("Vendor.Operation", as="Operation")
+| rename("Vendor.SourceFileName", as="FileName")
+| rename("Vendor.SourceFileExtension", as="FileExtension")
+| rename("Vendor.FileSizeBytes", as="FileSize")
+| rename("Vendor.ObjectId", as="ObjectID")
+| rename("Vendor.ClientIP", as="SourceIP")
+| rename("IP.country", as="Country")
+| rename("IP.state", as="State")
+| rename("IP.city", as="City")
