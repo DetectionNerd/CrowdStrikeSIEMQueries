@@ -1,9 +1,8 @@
 #Vendor=crowdstrike #event_simpleName=MotwWritten
-| case {
-    ReferrerUrl != "" AND ReferrerUrl != null | SourceURL := ReferrerUrl;
-    HostUrl    != "" and HostUrl    != null   | SourceURL := HostUrl;
-    * | SourceURL := null;
-}
+| SourceURL := coalesce(
+    HostUrl, 
+    ReferrerUrl  
+)
 | match(file="GenAIKeywordsForDownload.csv", column="AIDomainName1", field=@rawstring, mode=glob, strict=true, include=["AIDomainName", "AICompanyName", "AIProductName", "AICategory", "AICountry"])
 | upper("ComputerName", as="HostName")
 | lower("DomainName", as=DomainName)
