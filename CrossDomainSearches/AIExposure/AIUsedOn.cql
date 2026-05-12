@@ -8,7 +8,7 @@
     Vendor.Domain=* | Domain := Vendor.Domain;
     * | Domain := null;
 }
-| match(file="GenAIKeywords.csv", column="AIDomainName1", field=Domain, mode=glob, strict=true, include=["AIProductName"])
+| match(file="GenAIKeyword.csv", column="AIDomainName1", field=Domain, mode=glob, strict=true, include=["AIProductName"])
 | regex(",(?<Vendor.HostName>[a-zA-Z0-9-]+)$", field=Vendor.identities, strict=false)
 | upper("Vendor.HostName", as="Vendor.HostName")
 | upper("ComputerName", as="CrowdsStrike.ComputerName")
