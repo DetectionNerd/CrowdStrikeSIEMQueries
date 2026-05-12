@@ -13,4 +13,4 @@
 | [`11. Malicious URL on Teams Chat`](./MaliciousURLonTeamsChat.cql) |
 | [`12. M365 (OneDrive, SharePoint, Teams) Activity from Malicious IP`](./M365(OneDrive-SharePoint-Teams)ActivityfromMaliciousIP.cql) |
 | [`13. Malicious URL in Email`](./MaliciousURLinEmail.cql) |
-| [`13. Malicious Domain in Email`](./MaliciousDomaininEmail.cql) |
+| [`14. Malicious Domain in Email`](./MaliciousDomaininEmail.cql) |
