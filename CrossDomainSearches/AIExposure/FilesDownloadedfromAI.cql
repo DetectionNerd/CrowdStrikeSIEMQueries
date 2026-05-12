@@ -1,6 +1,6 @@
 #Vendor=crowdstrike #event_simpleName=MotwWritten
 | SourceURL := coalesce(HostUrl, ReferrerUrl)
-| match(file="GenAIKeywordsForDownload.csv", column="AIDomainName1", field=@rawstring, mode=glob, strict=true, include=["AIDomainName", "AICompanyName", "AIProductName", "AICategory", "AICountry"])
+| match(file="GenAIKeywordsForDownload.csv", column="AIDomainName1", field=SourceURL, mode=glob, strict=true, include=["AIDomainName", "AICompanyName", "AIProductName", "AICategory", "AICountry"])
 | upper("ComputerName", as="HostName")
 | lower("DomainName", as=DomainName)
 | ioc:lookup(field=SourceURL, type=url, confidenceThreshold=unverified, strict=false, prefix=URLioc, include=[last_updated, malicious_confidence, labels, published_date, indicator, type])
