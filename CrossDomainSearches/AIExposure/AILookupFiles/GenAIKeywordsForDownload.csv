@@ -1,0 +1,197 @@
+AIDomainName1,AIDomainName2,AICompanyName,AIProductName,AICategory,AICountry,AIFileKeywordMatch
+*framer.com*,*framer.com*,Framer,Framer AI,Multi‑Modal Generation,United States,*-alpaca-*
+*poe.com*,*poe.com*,Quora,Poe,LLM Chat Platform,United States,*controlnet*
+*scale.com*,*scale.com*,Scale AI,Scale AI Platform,Data Labeling/ML Ops,United States,*gpt4all-*
+*writer.com*,*writer.com*,Writer,Writer,Text Generation,United States,*kobold-ai*
+*you.com*,*you.com*,You.com,YouChat,LLM Chat,United States,*mistral*
+*10web.io*,*10web.io*,10Web,AI Website Builder,Web/Design AI,United States,*model_config.json*
+*ai21.com*,*ai21.com*,AI21 Labs,Jurassic,LLM,Israel,*-blip2-*
+*aleph-alpha.com*,*aleph-alpha.com*,Aleph Alpha,Aleph Alpha,LLM,Germany,*-gemma-*
+*animaapp.com*,*animaapp.com*,Anima,Anima,Design/UX,Canada,*-gpt3-*
+*animaker.com*,*animaker.com*,Animaker,Animaker,Video Generation,United States,"*-gpt4-*"""
+*anthropic.com*,*anthropic.com*,Anthropic,Claude,LLM,United States,*-gpt4all-*
+*calude.ai*,*calude.ai*,Anthropic,Claude,LLM,United States,*-llava-*
+*anyword.com*,*anyword.com*,Anyword,Anyword,Text Marketing,United States,*-rwkv-*
+*artbreeder.com*,*artbreeder.com*,Artbreeder,Artbreeder,Image Generation,United States,*-vicuna-*
+*assemblyai.com*,*assemblyai.com*,AssemblyAI,AssemblyAI,Speech‑to‑Text,United States,*.ckpt*
+*autodraw.com*,*autodraw.com*,Google,AutoDraw,Image Assistance,United States,*.env.anthropic*
+*bard.google.com*,*bard.google.com*,Google,Gemini,LLM,United States,*.env.openai*
+*gemini.google.com*,*gemini.google.com*,Google,Gemini,LLM,United States,*.faiss*
+*bedrock.aws.amazon.com*,*bedrock.aws.amazon.com*,Amazon,AWS Bedrock,LLM/AI Cloud,United States,*.ggml*
+*bigjpg.com*,*bigjpg.com*,Bigjpg,Bigjpg,Image,Japan,*.gguf*
+*bookmark.com*,*bookmark.com*,Bookmark,Bookmark,Website AI,Canada,*.keras*
+*boomy.com*,*boomy.com*,Boomy,Boomy,Audio/Music Generation,United States,*.onnx*
+*botpress.com*,*botpress.com*,Botpress,Botpress,Chatbot/LLM,Canada,*.safetensors*
+*brandmark.io*,*brandmark.io*,Brandmark,Brandmark,Branding/Logo Gen,United States,*adobe-firefly*
+*bubble.io*,*bubble.io*,Bubble,Bubble,App Builder AI,United States,*alpaca-*
+*chat.deepseek.com*,*chat.deepseek.com*,DeepSeek,DeepSeek,LLM,United States,*anthropic-claude*
+*deepseek*,*deepseek*,DeepSeek,DeepSeek,LLM,United States,*anthropic*
+*chatfuel.com*,*chatfuel.com*,Chatfuel,Chatfuel,Chatbot/LLM,Israel,*audiocraft*
+*chatgpt.com*,*chatgpt.com*,OpenAI,ChatGPT,LLM,United States,*audioldm*
+*openai.com*,*openai.com*,OpenAI,ChatGPT,LLM/Multi‑Modal,United States,*auto-gptq*
+*oaiusercontent.com*,*oaiusercontent.com*,OpenAI,ChatGPT,LLM/Multi‑Modal File Operation,United States,*automatic-webui*
+*chatpdf.com*,*chatpdf.com*,ChatPDF,ChatPDF,Document Chat,United States,*automatic1111*
+*civitai.com*,*civitai.com*,Civitai,Civitai,Model Hub/Image Models,United States,*aws-codewhisperer*
+*cleanup.pictures*,*cleanup.pictures*,Clipdrop,Cleanup.pictures,Image Editing,United States,*bark-voice*
+*clickup.com*,*clickup.com*,ClickUp,ClickUp,Work/PM AI,United States,*bitsandbytes-cuda*
+*codeium.com*,*codeium.com*,Codeium,Codeium,Code LLM,United States,*bitsandbytes-gpu*
+*colossyan.com*,*colossyan.com*,Colossyan,Colossyan,Video AI,Estonia,*blip2-model*
+*consensus.app*,*consensus.app*,Consensus,Consensus,Research/LLM,United States,*character-ai*
+*copilot.github.com*,*copilot.github.com*,GitHub,GitHub Copilot,Code LLM,United States,*characterai*
+*copilot.microsoft.com*,*copilot.microsoft.com*,Microsoft,Microsoft Copilot,LLM Productivity,United States,*chat-gpt*
+*cursor.so*,*cursor.so*,Cursor,Cursor,Code LLM,United States,*chatgpt-desktop*
+*d-id.com*,*d-id.com*,D‑ID,D‑ID,Video/Avatar,Israel,*chatgpt*
+*debuild.app*,*debuild.app*,Debuild,Debuild,Code Generation,United States,*claude-2*
+*deepbrain.io*,*deepbrain.io*,DeepBrain AI,DeepBrain AI,Video/Avatar AI,South Korea,*claude-desktop*
+*deepdreamgenerator.com*,*deepdreamgenerator.com*,Deep Dream Generator,DeepDream,Image Style,United States,*claude-pro*
+*deepl.com*,*deepl.com*,DeepL,DeepL,Translation,Germany,*claude*
+*deepmind.com*,*deepmind.com*,Google DeepMind,DeepMind,Research AI,United Kingdom,*clip-interrogator*
+*descript.com*,*descript.com*,Descript,Descript,Audio/Video Editing,United States,*codewhisperer*
+*durable.co*,*durable.co*,Durable,Durable,Website/SMB AI,United States,*comfy-stable*
+*elai.io*,*elai.io*,Elai,Elai,Video Generation,Israel,*comfy-ui*
+*elevenlabs.io*,*elevenlabs.io*,ElevenLabs,ElevenLabs,Voice Synthesis,United States,*comfyui*
+*elicit.org*,*elicit.org*,Ought,Elicit,Research AI,United States,*ctransformers*
+*ernie.baidu.com*,*ernie.baidu.com*,Baidu,ERNIE,LLM,China,*cursor-ai-code*
+*feedhive.io*,*feedhive.io*,FeedHive,FeedHive,Marketing AI,Canada,*d-id-studio*
+*frase.io*,*frase.io*,Frase,Frase,SEO/Content,United States,*dall-e*
+*fronty.com*,*fronty.com*,Fronty,Fronty,Web/Design AI,United States,*dalle-*
+*gamma.app*,*gamma.app*,Gamma,Gamma,Presentation AI,United States,*deep-face-lab*
+*gigachat.sberbank.ru*,*gigachat.sberbank.ru*,Sberbank,GigaChat,LLM,Russia,*deepfacelab*
+*gpt3.com*,*gpt3.com*,OpenAI,ChatGPT,LLM,United States,*deepseek-chat*
+*grammarly.com*,*grammarly.com*,Grammarly,GrammarlyGO,Text Editing,United States,*deepseek-coder*
+*heygen.com*,*heygen.com*,HeyGen,HeyGen,Video/Avatar,United States,*deepseek-desktop*
+*huggingface.co*,*huggingface.co*,Hugging Face,Hugging Face,Model Repository,France,*deepseek-llm*
+*inkforall.com*,*inkforall.com*,INK,INK,Content AI,United States,*deepseek*
+*invideo.io*,*invideo.io*,InVideo,InVideo,Video Creation,United States,*deepspeed*
+*ispeech.org*,*ispeech.org*,iSpeech,iSpeech,Speech‑to‑Text/Voice,United States,*descript-studio*
+*jupyter.org*,*jupyter.org*,Project Jupyter,Jupyter,Dev Platform,United States,*did-avatar*
+*landbot.io*,*landbot.io*,Landbot,Landbot,Chatbot,Spain,*did-studio*
+*letsenhance.io*,*letsenhance.io*,Let’s Enhance,Let’s Enhance,Image Enhancement,Italy,*dreambooth*
+*lex.page*,*lex.page*,Lex,Lex,LLM,United States,*esrgan-ncnn*
+*lexalytics.com*,*lexalytics.com*,Lexalytics,Lexalytics,NLP Analytics,United States,*exllama*
+*listnr.tech*,*listnr.tech*,Listnr,Listnr,Audio/Podcast,United Kingdom,*exllama2*
+*looka.com*,*looka.com*,Looka,Looka,Branding AI,Canada,*exllamav2*
+*lumen5.com*,*lumen5.com*,Lumen5,Lumen5,Video AI,Canada,*face-fusion*
+*luminoso.com*,*luminoso.com*,Luminoso,Luminoso,NLP Analytics,United States,*facefusion*
+*manychat.com*,*manychat.com*,ManyChat,ManyChat,Chat/Automation,United States,*falcon-llm*
+*marketmuse.com*,*marketmuse.com*,MarketMuse,MarketMuse,Content Strategy,United States,*faster-whisper*
+*meaningcloud.com*,*meaningcloud.com*,MeaningCloud,MeaningCloud,NLP,Spain,*model.safetensors.index.json*
+*midjourney.com*,*midjourney.com*,Midjourney,MidJourney,Image Generation,United States,*moondream*
+*moltbook.com*,*moltbook.com*,Moltbook,Moltbook,Publishing AI,United States,*musicgen*
+*moltbookai.net*,*moltbookai.net*,Moltbook,Moltbook,Publishing AI,United States,*firefly-creative*
+*molthub.com*,*molthub.com*,MoltHub,MoltHub,AI Tools Search,United States,*gemini-pro*
+*monkeylearn.com*,*monkeylearn.com*,MonkeyLearn,MonkeyLearn,NLP,United States,*gemma-*
+*namelix.com*,*namelix.com*,NameLix,NameLix,Brand Name Generation,United States,*generation_config.txt*
+*naturalreaders.com*,*naturalreaders.com*,NaturalReaders,NaturalReaders,Text‑to‑Speech,United States,*gfpgan*
+*notion.so*,*notion.so*,Notion,Notion AI,Productivity/LLM,United States,*gigachat*
+*novelai.net*,*novelai.net*,NovelAI,NovelAI,Story Generation,Serbia,*github-copilot*
+*opus.pro*,*opus.pro*,Opus,Opus,Video/Clip AI,United States,*google-gemini*
+*outranking.io*,*outranking.io*,Outranking,Outranking,SEO AI,United States,*google-palm*
+*photoroom.com*,*photoroom.com*,PhotoRoom,PhotoRoom,Image Background Remove,France,*gpt-3*
+*phrasee.co*,*phrasee.co*,Phrasee,Phrasee,Marketing AI,United Kingdom,*gpt-4*
+*pika.art*,*pika.art*,Pika Labs,Pika,Image/3D,United States,*gpt-chat*
+*play.ht*,*play.ht*,Play.ht,Play.ht,Voice Synthesis,United States,*gptq-for-llama*
+*promptbase.com*,*promptbase.com*,PromptBase,PromptBase,Prompt Marketplace,United States,*grammarly-editor*
+*prowritingaid.com*,*prowritingaid.com*,ProWritingAid,ProWritingAid,Text Editing,United Kingdom,*heygen-studio*
+*quillbot.com*,*quillbot.com*,QuillBot,QuillBot,Text Paraphrase,United States,*huggingface-hub*
+*rasa.com*,*rasa.com*,Rasa,Rasa,Chatbot/LLM,Germany,*image2image-stable*
+*rawshorts.com*,*rawshorts.com*,Raw Shorts,Raw Shorts,Video AI,United States,*invoke-ai*
+*remove.bg*,*remove.bg*,Kaleido,remove.bg,Image Background Remove,Switzerland,*invoke-stable*
+*replicate.com*,*replicate.com*,Replicate,Replicate,AI Model Hosting,United States,*invokeai*
+*riffusion.com*,*riffusion.com*,Riffusion,Riffusion,Audio/AI Music,United States,*jupyter-copilot*
+*runwayml.com*,*runwayml.com*,Runway,Runway,Video/Creative AI,United States,*kandinsky*
+*rytr.me*,*rytr.me*,Rytr,Rytr,Text Generation,United States,*kohya-ss*
+*skylum.com*,*skylum.com*,Skylum,Luminar AI,Image Editing,Ukraine,*kohya-trainer*
+*slidesai.io*,*slidesai.io*,SlidesAI,SlidesAI,Presentation AI,United States,*latent-diffusion*
+*soundraw.io*,*soundraw.io*,Soundraw,Soundraw,Music AI,Japan,*lensa*
+*speechify.com*,*speechify.com*,Speechify,Speechify,Text‑to‑Speech,United States,*llama-2-cpp*
+*stablediffusionweb.com*,*stablediffusionweb.com*,Stability AI,Stable Diffusion,Image Generation,United States,*llama-cpp*
+*sudowrite.com*,*sudowrite.com*,Sudowrite,Sudowrite,Creative Writing AI,United States,*llama2-cpp*
+*synthesia.io*,*synthesia.io*,Synthesia,Synthesia,Video AI,United Kingdom,*llava-*
+*synthesys.io*,*synthesys.io*,Synthesys,Synthesys,Voice/Video AI,United Kingdom,*llava-vision*
+*tabnine.com*,*tabnine.com*,Tabnine,Tabnine,Code LLM,Israel,*llm-deploy*
+*textcortex.com*,*textcortex.com*,TextCortex,TextCortex,Text Generation,Bulgaria,*lm-studio*
+*textrazor.com*,*textrazor.com*,TextRazor,TextRazor,NLP,United States,*lmdeploy*
+*tome.app*,*tome.app*,Tome,Tome,Presentation AI,United States,*lmstudio*
+*topazlabs.com*,*topazlabs.com*,Topaz Labs,Topaz AI,Image/Video Enhancement,United States,*luminar-neo*
+*trint.com*,*trint.com*,Trint,Trint,Speech‑to‑Text,United States,*megatron-lm*
+*uizard.io*,*uizard.io*,Uizard,Uizard,Design AI,Estonia,*meta-audiocraft*
+*unbounce.com*,*unbounce.com*,Unbounce,Unbounce Smart Copy,Marketing AI,Canada,*meta-musicgen*
+*v0.dev*,*v0.dev*,Vercel,v0,Dev/ML Ops,United States,*meta-seamless*
+*veed.io*,*veed.io*,VEED,VEED,Video Editing,United Kingdom,*microsoft-copilot*
+*vista.social*,*vista.social*,Vista Social,Vista Social,Social AI,Canada,*midjourney-client*
+*vocalid.co*,*vocalid.co*,VocaliD,VocaliD,Voice Synthesis,United States,*midjourney-desktop*
+*voiceflow.com*,*voiceflow.com*,Voiceflow,Voiceflow,Voice Conversational AI,Canada,*midjourney*
+*wellsaidlabs.com*,*wellsaidlabs.com*,WellSaid Labs,WellSaid,Voice Synthesis,United States,*mistral-ai*
+*wisecut.video*,*wisecut.video*,WiseCut,WiseCut,Video Editing,United States,*mistral-chat*
+*wordtune.com*,*wordtune.com*,AI21 Labs,Wordtune,Text Editing/LLM,Israel,*mistralai*
+*writesonic.com*,*writesonic.com*,Writesonic,Writesonic,Text Generation,United States,*copilot-for*
+,,,,,,*koboldcpp*
+,,,,,,*mistral-inference*
+,,,,,,*openclaw*
+,,,,,,*notion-assistant*
+,,,,,,*nvidia-stylegan*
+,,,,,,*nvidia-tensorrt*
+,,,,,,*nvidia-triton*
+,,,,,,*ollama-desktop*
+,,,,,,*ollama-ui*
+,,,,,,*ollama*
+,,,,,,*oobabooga-webui*
+,,,,,,*oobabooga*
+,,,,,,*openai-chat*
+,,,,,,*openai-chatgpt*
+,,,,,,*openai-clip*
+,,,,,,*openai-whisper*
+,,,,,,*openjourney*
+,,,,,,*perplexity-desktop*
+,,,,,,*phi-2*
+,,,,,,*photoroom*
+,,,,,,*pythia*
+,,,,,,*pytorch_model*.bin
+,,,,,,*real-esrgan*
+,,,,,,*replika*
+,,,,,,*riffusion*
+,,,,,,*runway-gen*
+,,,,,,*runway-ml*
+,,,,,,*rwkv-*
+,,,,,,*sdnext*
+,,,,,,*sdwebui*
+,,,,,,*sdxl-base*
+,,,,,,*sdxl-refiner*
+,,,,,,*sdxl-turbo*
+,,,,,,*seamless-m4t*
+,,,,,,*seamlessm4t*
+,,,,,,*segment-anything*
+,,,,,,*so-vits-svc*
+,,,,,,*stable-cascade*
+,,,,,,*stable-diffusion-ui*
+,,,,,,*stable-diffusion-webui*
+,,,,,,*stable-diffusion-xl*
+,,,,,,*stable-diffusion*
+,,,,,,*stable-img2img*
+,,,,,,*stable-text2img*
+,,,,,,*stablecascade*
+,,,,,,*stablediffusion*
+,,,,,,*stablelm*
+,,,,,,*stylegan3*
+,,,,,,*synthesia-studio*
+,,,,,,*tensorrt-llm*
+,,,,,,*text-generation-webui*
+,,,,,,*text2image-stable*
+,,,,,,*textgen-webui*
+,,,,,,*tokenizer_config.*
+,,,,,,*tokenizer.*
+,,,,,,*topaz-gigapixel*
+,,,,,,*tortoise-tts*
+,,,,,,*tortoise-voice*
+,,,,,,*transformers-js*
+,,,,,,*triton-server*
+,,,,,,*vicuna-*
+,,,,,,*visual-studio-copilot*
+,,,,,,*vocab.txt*
+,,,,,,*vscode-copilot*
+,,,,,,*wav2lip*
+,,,,,,*whisper-cpp*
+,,,,,,*whisper-large*
+,,,,,,*windows-copilot*
+,,,,,,*writesonic*
